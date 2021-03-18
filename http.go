@@ -11,7 +11,9 @@ import (
 	"time"
 )
 
-var gHTTPClient = CreateHTTPClient()
+var (
+	gHTTPClient = CreateHTTPClient()
+)
 
 func GetHTTPClient() *HTTPClient {
 	return gHTTPClient
@@ -65,8 +67,6 @@ func (client *HTTPClient) PostJSON(pushClient *PushClient, uri string, values in
 		body = requestData
 	}
 	client.SetSign(pushClient, body)
-
-	//fmt.Println(uri,string(body))
 
 	if request, err := http.NewRequest(http.MethodPost, uri, bytes.NewReader(body)); err == nil {
 		request.Header.Add("Content-Type", "application/json")
