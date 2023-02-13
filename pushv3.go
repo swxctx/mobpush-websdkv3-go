@@ -37,10 +37,6 @@ func (client *PushClient) PushByTags(workNo, title, content string, tags []strin
 	return GetHTTPClient().PostJSON(client, BASE_URL+PUSH_PUSH_URI, push)
 }
 
-func (client *PushClient) PushByTagsCustom(push Push) ([]byte, error) {
-	return GetHTTPClient().PostJSON(client, BASE_URL+PUSH_PUSH_URI, push)
-}
-
 func (client *PushClient) PushByRids(workNo, title, content string, rids []string) ([]byte, error) {
 	push := NewPushModel(client.AppKey)
 	push.setWorkno(workNo)
