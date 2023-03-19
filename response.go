@@ -41,7 +41,7 @@ type PushDetailsResponse struct {
 	// iOS 统计
 	IOS PushNumDetails `json:"ios"`
 	// 安卓统计
-	android PushNumDetails `json:"android"`
+	Android PushNumDetails `json:"android"`
 	// 通过厂商推送的统计
 	Factory PushNumDetails `json:"factory"`
 	// 通过MobPush通道下发的统计
