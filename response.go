@@ -38,6 +38,12 @@ type PushNumDetails struct {
 type PushDetailsResponse struct {
 	// 状态码
 	Status int `json:"status"`
+	// 详细信息
+	Res DetailsInfo `json:"res"`
+}
+
+// detailsResponse
+type DetailsInfo struct {
 	// iOS 统计
 	IOS PushNumDetails `json:"ios"`
 	// 安卓统计
