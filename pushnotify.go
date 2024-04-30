@@ -21,6 +21,23 @@ const (
 	IOS_ENV_PROD = 1
 )
 
+const (
+	// POLICY_TCP_AND_PLATFORM - 1：先走tcp，再走厂商
+	POLICY_TCP_AND_PLATFORM = 1
+
+	// POLICY_PLATFORM_AND_TCP - 2：先走厂商，再走tcp
+	POLICY_PLATFORM_AND_TCP = 2
+
+	// POLICY_ONLY_PLATFORM - 3：只走厂商
+	POLICY_ONLY_PLATFORM = 3
+
+	// POLICY_ONLY_TCP - 4：只走tcp
+	POLICY_ONLY_TCP = 4
+
+	// POLICY_DEVECE_WAKEUP - 5：设备亮屏推送
+	POLICY_DEVECE_WAKEUP = 5
+)
+
 type PushNotify struct {
 	// 1 android;2 ios
 	Plats []int `json:"plats"`
@@ -34,6 +51,16 @@ type PushNotify struct {
 	Title string `json:"title"`
 	// 推送类型：1通知；2自定义
 	Type int `json:"type"`
+
+	/*
+		推送策略
+		- 1：先走tcp，再走厂商
+		- 2：先走厂商，再走tcp
+		- 3：只走厂商
+		- 4：只走tcp
+		- 5：设备亮屏推送 注：厂商透传只支持策略3或4
+	*/
+	Policy int `json:"policy"`
 
 	// android通知消息, type=1, android
 	AndroidNotify *AndroidNotify `json:"androidNotify"`
