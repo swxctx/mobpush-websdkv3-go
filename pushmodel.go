@@ -2,22 +2,22 @@ package mob_push_sdk
 
 type Push struct {
 	// 自定义任务id（用户自自定义生成且唯一、不能重复）
-	WorkNo string `json:"workno"`
+	WorkNo string `json:"workno,omitempty"`
 	// 枚举值 webapi
-	Source string `json:"source"`
+	Source string `json:"source,omitempty"`
 	// appkey
-	Appkey string `json:"appkey"`
+	Appkey string `json:"appkey,omitempty"`
 	// 推送目标
-	PushTarget PushTarget `json:"pushTarget"`
+	PushTarget PushTarget `json:"pushTarget,omitempty"`
 	// 推送展示细节配置
-	PushNotify PushNotify `json:"pushNotify"`
+	PushNotify PushNotify `json:"pushNotify,omitempty"`
 	// 运营保障相关配置, 默认有个空对象
 	PushOperator *PushOperator `json:"pushOperator,omitempty"`
 	// link 相关打开配置
 	PushForward *PushForward `json:"pushForward,omitempty"`
 
 	// 厂商特殊配置
-	PushFactoryExtra *PushFactoryExtra `json:"pushFactoryExtra"`
+	PushFactoryExtra *PushFactoryExtra `json:"pushFactoryExtra,omitempty"`
 }
 
 func NewPushModel(appKey string) *Push {

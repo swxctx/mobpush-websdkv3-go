@@ -14,16 +14,16 @@ type PushFactoryExtra struct {
 
 type (
 	XiaomiExtra struct {
-		ChannelId string `json:"channel_id"`
+		ChannelId string `json:"channel_id,omitempty"`
 	}
 
 	OppoExtra struct {
-		ChannelId string `json:"channel_id"`
+		ChannelId string `json:"channel_id,omitempty"`
 	}
 
 	VivoExtra struct {
 		// VIVO消息类型 0：运营类型消息 ；1：系统类型消息
-		Classification string `json:"classification"`
+		Classification string `json:"classification,omitempty"`
 	}
 
 	HuaweiExtra struct {
