@@ -45,7 +45,7 @@ type PushTarget struct {
 type PushLabel struct {
 	LabelIds []string `json:"labelIds,omitempty"`
 	MobId    string   `json:"mobId,omitempty"`
-	Type     int      `json:"type,omitempty"`
+	Type     int      `json:"type"`
 }
 
 type PushAreas struct {
