@@ -10,6 +10,8 @@ type PushFactoryExtra struct {
 	VivoExtra *VivoExtra `json:"vivoExtra,omitempty"`
 	// 华为厂商特殊配置
 	HuaweiExtra *HuaweiExtra `json:"huaweiExtra,omitempty"`
+	// 荣耀厂商特殊配置
+	HonorExtra *HonorExtra `json:"honorExtra,omitempty"`
 }
 
 type (
@@ -47,5 +49,15 @@ type (
 		//	MARKETING：内容推荐、新闻、财经动态、生活资讯、社交动态、调研、产品促销、功能推荐、运营活动（仅对内容进行标识，不会加快消息发送）
 		// 作用二：申请特殊权限后，用于标识高优先级透传场景，取值如下： VOIP：音视频通话 PLAY_VOICE：语音播报
 		Category string `json:"category,omitempty"`
+	}
+
+	HonorExtra struct {
+		/*
+			消息类型
+			- LOW：资讯营销类
+			- NORMAL：服务与通讯类
+			注：资讯营销类的消息默认展示方式为静默通知，仅在下拉通知栏展示。 服务与通讯类的消息默认展示方式为锁屏展示+下拉通知栏展示
+		*/
+		Importance string `json:"importance,omitempty"`
 	}
 )
